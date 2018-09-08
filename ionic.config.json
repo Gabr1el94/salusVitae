@@ -1,0 +1,7 @@
+{
+  "name": "salusVitae",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
