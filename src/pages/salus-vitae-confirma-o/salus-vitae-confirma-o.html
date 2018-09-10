@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-only>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goToSalusVitaePreparaO()">
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>
       Salus Vitae - Confirmação
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 <ion-content padding id="page12">
   <div id="salusVitaeConfirmaO-container13" class="title">
@@ -23,12 +23,10 @@
   <div id="salusVitaeConfirmaO-container19" class="infor">
     <div class="spacer" style="width:283px;height:20px;" id="salusVitaeConfirmaO-spacer17"></div>
     <div id="salusVitaeConfirmaO-container18" class="btn-group">
-      <button id="salusVitaeConfirmaO-button22" ion-button color="stable" large>
-        Resumo
-      </button>
-      <button id="salusVitaeConfirmaO-button23" ion-button color="dark" large>
-        Medicamentos
-      </button>
+      <div class="button-bar custom-width-bar">
+        <button ion-button color="secondary" large class="button-btn">Resumo</button>
+        <button ion-button color="secondary" large class="button-btn">Medicamentos</button>
+      </div>
       <div class="spacer" style="width:283px;height:20px;" id="salusVitaeConfirmaO-spacer18"></div>
       <form id="salusVitaeConfirmaO-form7">
         <ion-list id="salusVitaeConfirmaO-list10">
@@ -46,7 +44,8 @@
           </ion-item>
         </ion-list>
         <div class="spacer" style="width:283px;height:20px;" id="salusVitaeConfirmaO-spacer19"></div>
-        <button id="salusVitaeConfirmaO-button24" ion-button color="positive" large style="border-radius:35px 35px 35px 35px;" on-click="goToSalusVitaeHome()">
+        <button id="salusVitaeConfirmaO-button24" ion-button color="positive" large style="right: -3%;border-radius:35px 35px 35px 35px;"
+          on-click="goToSalusVitaeHome()">
           <ion-icon name="checkmark"></ion-icon>
         </button>
       </form>

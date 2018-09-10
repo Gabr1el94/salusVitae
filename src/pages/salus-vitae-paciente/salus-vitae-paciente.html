@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)=" goToSalusVitaeHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Salus Vitae - Paciente
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 <ion-content padding id="page10">
   <div id="salusVitaePaciente-container8" class="title">
@@ -12,18 +17,16 @@
       Nome Completo
     </h2>
     <h4 id="salusVitaePaciente-heading9" style="color:#000000;text-align:center;">
-      Prontuário
+      Prescrição
     </h4>
   </div>
   <div id="salusVitaePaciente-container10" class="infor">
     <div class="spacer" style="width:283px;height:20px;" id="salusVitaePaciente-spacer11"></div>
     <div id="salusVitaePaciente-container11" class="btn-group">
-      <button id="salusVitaePaciente-button13" ion-button color="stable" large>
-        Resumo
-      </button>
-      <button id="salusVitaePaciente-button14" ion-button color="dark" large>
-        Prescrição
-      </button>
+        <div class="button-bar custom-width-bar">
+            <button ion-button color="secondary" large class="button-btn">Geral</button>
+            <button ion-button color="secondary" large class="button-btn">Prescrição</button>
+          </div>
     </div>
     <div class="spacer" style="height:20px;" id="salusVitaePaciente-spacer23"></div>
     <div id="salusVitaePaciente-markdown2" class="show-list-numbers-and-dots">

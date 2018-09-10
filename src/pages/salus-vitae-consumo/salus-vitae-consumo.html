@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon name="arrow-back"></ion-icon>
-      </button>
-    </ion-buttons>
+  <ion-toolbar>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="goToSalusVitaeHome()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
     <ion-title>
       Salus Vitae - Consumo
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 <ion-content padding id="page6">
   <div class="spacer" style="width:283px;height:17px;" id="salusVitaeConsumo-spacer5"></div>
@@ -24,16 +24,22 @@
   <form id="salusVitaeConsumo-form4">
     <ion-list id="salusVitaeConsumo-list6" class="listConsumer">
       <ion-item color="none" id="salusVitaeConsumo-list-item23">
+          <ion-label>
         Item 1
-        <ion-icon name="checkbox" item-right></ion-icon>
+      </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
       </ion-item>
       <ion-item color="none" id="salusVitaeConsumo-list-item24">
+      <ion-label>
         Item 2
-        <ion-icon name="square-outline" item-right></ion-icon>
+      </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
       </ion-item>
       <ion-item color="none" id="salusVitaeConsumo-list-item25">
+      <ion-label>
         Item 3
-        <ion-icon name="square" item-right></ion-icon>
+      </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
       </ion-item>
     </ion-list>
     <h4 id="salusVitaeConsumo-heading7" style="color:#000000;">
@@ -43,8 +49,9 @@
       <ion-label></ion-label>
       <ion-input type="text" placeholder="Justifique..." name="motivo"></ion-input>
     </ion-item>
+    <div class="spacer" style="width:283px;height:17px;" id="salusVitaeMedicamento-spacer22"></div>
+    <button id="salusVitaeConsumo-button5" ion-button color="positive" large style="font-weight:600;border-radius:30px 30px 30px 30px;" class="addRead">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
   </form>
-  <button id="salusVitaeConsumo-button5" ion-button color="positive" large style="font-weight:600;border-radius:30px 30px 30px 30px;" class="addRead">
-    <ion-icon name="checkmark"></ion-icon>
-  </button>
 </ion-content>

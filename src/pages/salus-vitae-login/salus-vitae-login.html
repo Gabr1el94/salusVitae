@@ -1,9 +1,7 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Salus Vitae - Login
-    </ion-title>
-  </ion-navbar>
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>Salus Vitae - Login</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content padding id="page1">
   <div id="salusVitaeLogin-container1" class="container">
@@ -17,11 +15,13 @@
     </ion-item>
     <ion-item id="salusVitaeLogin-input5">
       <ion-label></ion-label>
-      <ion-input type="password" placeholder="*****************" name="pass"></ion-input>
+      <ion-input type="password" placeholder="*****" name="pass"></ion-input>
     </ion-item>
+    <br>
+    <button id="salusVitaeLogin-button1" ion-button color="positive" block large icon-right style="font-weight:600;font-size:25px;" on-click="goToSalusVitaeHome()">
+      Entrar
+      <ion-icon name="log-in"></ion-icon>
+    </button>
   </form>
-  <button id="salusVitaeLogin-button1" ion-button color="positive" block large icon-right style="font-weight:600;font-size:25px;" on-click="goToSalusVitaeHome()">
-    Entrar
-    <ion-icon name="log-in"></ion-icon>
-  </button>
+  
 </ion-content>

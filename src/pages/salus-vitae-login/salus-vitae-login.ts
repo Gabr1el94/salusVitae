@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SalusVitaeHomePage } from '../salus-vitae-home/salus-vitae-home';
+/*
 import { SalusVitaeConsumoPage } from '../salus-vitae-consumo/salus-vitae-consumo';
 import { PacientePage } from '../paciente/paciente';
 import { SalusVitaePacientePage } from '../salus-vitae-paciente/salus-vitae-paciente';
@@ -9,7 +10,7 @@ import { SalusVitaeDetalhesPage } from '../salus-vitae-detalhes/salus-vitae-deta
 import { SalusVitaeMedicamentoPage } from '../salus-vitae-medicamento/salus-vitae-medicamento';
 import { MedicamentoPage } from '../medicamento/medicamento';
 import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-confirma-o';
-
+*/
 @Component({
   selector: 'page-salus-vitae-login',
   templateUrl: 'salus-vitae-login.html'
@@ -21,7 +22,9 @@ export class SalusVitaeLoginPage {
   goToSalusVitaeHome(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeHomePage);
-  }goToSalusVitaeConsumo(params){
+  }
+  /*
+  goToSalusVitaeConsumo(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConsumoPage);
   }goToPaciente(params){
@@ -46,4 +49,5 @@ export class SalusVitaeLoginPage {
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConfirmaOPage);
   }
+  */
 }

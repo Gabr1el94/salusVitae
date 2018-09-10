@@ -16,7 +16,9 @@ import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-c
 export class SalusVitaeHomePage {
 
   constructor(public navCtrl: NavController) {
+    
   }
+
   goToSalusVitaeConsumo(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConsumoPage);

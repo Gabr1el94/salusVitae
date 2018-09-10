@@ -20,28 +20,36 @@ export class SalusVitaeDetalhesPage {
   goToSalusVitaeMedicamento(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeMedicamentoPage);
-  }goToSalusVitaePreparaO(params){
+  }
+  goToSalusVitaePreparaO(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaePreparaOPage);
-  }goToSalusVitaeDetalhes(params){
+  }
+  goToSalusVitaeDetalhes(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeDetalhesPage);
-  }goToMedicamento(params){
+  }
+  goToMedicamento(params){
     if (!params) params = {};
     this.navCtrl.push(MedicamentoPage);
-  }goToSalusVitaeConfirmaO(params){
+  }
+  goToSalusVitaeConfirmaO(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConfirmaOPage);
-  }goToSalusVitaeHome(params){
+  }
+  goToSalusVitaeHome(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeHomePage);
-  }goToSalusVitaeConsumo(params){
+  }
+  goToSalusVitaeConsumo(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConsumoPage);
-  }goToPaciente(params){
+  }
+  goToPaciente(params){
     if (!params) params = {};
     this.navCtrl.push(PacientePage);
-  }goToSalusVitaePaciente(params){
+  }
+  goToSalusVitaePaciente(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaePacientePage);
   }
