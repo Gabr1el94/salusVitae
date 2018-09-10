@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons left>
-          <button ion-button icon-only (click)="goToSalusVitaeHome()">
-              <ion-icon name="arrow-back"></ion-icon>
-          </button>
-      </ion-buttons>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goToSalusVitaeHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Salus Vitae - Consumo
     </ion-title>
@@ -23,26 +23,30 @@
   <div class="spacer" style="width:283px;height:21px;" id="salusVitaeConsumo-spacer7"></div>
   <form id="salusVitaeConsumo-form4">
     <ion-list id="salusVitaeConsumo-list6" class="listConsumer">
-      <ion-item color="none" id="salusVitaeConsumo-list-item23">
-          <ion-label>
-        Item 1
-      </ion-label>
-        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      <ion-item color="none" id="salusVitaeConsumo-list-item23" ion-item (click)="buttonClick()">
+        <ion-label>
+          Item 1
+        </ion-label>
+        <!--  <ion-checkbox item-right secondary checked="false"></ion-checkbox>-->
       </ion-item>
-      <ion-item color="none" id="salusVitaeConsumo-list-item24">
-      <ion-label>
-        Item 2
-      </ion-label>
-        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      <ion-card *ngIf="isOwner">
+        <ion-item >
+          <h2>Intervalo</h2>
+          <p>00:02:00</p>
+        </ion-item>      
+      </ion-card>
+      <ion-item color="none" id="salusVitaeConsumo-list-item24" >
+        <ion-label>
+          Item 2
+        </ion-label>
       </ion-item>
-      <ion-item color="none" id="salusVitaeConsumo-list-item25">
-      <ion-label>
-        Item 3
-      </ion-label>
-        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      <ion-item color="none" id="salusVitaeConsumo-list-item25" >
+        <ion-label>
+          Item 3
+        </ion-label>
       </ion-item>
     </ion-list>
-    <h4 id="salusVitaeConsumo-heading7" style="color:#000000;">
+    <!--  <h4 id="salusVitaeConsumo-heading7" style="color:#000000;">
       Motivo:
     </h4>
     <ion-item id="salusVitaeConsumo-input6">
@@ -52,6 +56,6 @@
     <div class="spacer" style="width:283px;height:17px;" id="salusVitaeMedicamento-spacer22"></div>
     <button id="salusVitaeConsumo-button5" ion-button color="positive" large style="font-weight:600;border-radius:30px 30px 30px 30px;" class="addRead">
       <ion-icon name="checkmark"></ion-icon>
-    </button>
+    </button>-->
   </form>
 </ion-content>
