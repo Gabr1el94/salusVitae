@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu *ngIf="isLogged()" [content]="content">
     <ion-header>
         <ion-toolbar>
           <ion-title>Menu</ion-title>
@@ -10,7 +10,7 @@
                 Notificação
                 <ion-icon name="notifications" item-right></ion-icon>
               </button>
-              <button ion-item >
+              <button ion-item>
                 Sair
                 <ion-icon name="exit" item-right></ion-icon>
               </button>

@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
+import { SalusVitaeLoginPage } from '../pages/salus-vitae-login/salus-vitae-login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   
-    rootPage:any = HomePage;
+  @ViewChild('content') nav: NavController;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,6 +20,12 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  isLogged() {
+    return this.nav.getActive() != null &&
+     !(this.nav.getActive().instance instanceof HomePage ||
+     this.nav.getActive().instance instanceof SalusVitaeLoginPage);
   }
   
 }
