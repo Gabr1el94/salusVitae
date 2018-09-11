@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
 import { SalusVitaeLoginPage } from '../pages/salus-vitae-login/salus-vitae-login';
 import { SalusVitaeHomePage } from '../pages/salus-vitae-home/salus-vitae-home';
@@ -53,7 +54,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BarcodeScanner
   ]
 })
 export class AppModule {}

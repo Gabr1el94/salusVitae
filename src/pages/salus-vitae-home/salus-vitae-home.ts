@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { SalusVitaeConsumoPage } from '../salus-vitae-consumo/salus-vitae-consumo';
 import { PacientePage } from '../paciente/paciente';
 import { SalusVitaePacientePage } from '../salus-vitae-paciente/salus-vitae-paciente';
@@ -15,7 +16,7 @@ import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-c
 })
 export class SalusVitaeHomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private toastCtrl: ToastController) {
     
   }
 
@@ -47,4 +48,34 @@ export class SalusVitaeHomePage {
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeConfirmaOPage);
   }
+
+  startScan() {
+    let options = {
+      showTorchButton: true,
+      prompt: 'Realize o scan da pulseira do paciente',
+      resultDisplayDuration: 0
+    }
+
+    this.barcodeScanner.scan(options).then(barcodeData => {
+      this.navCtrl.push(SalusVitaePacientePage).then(
+        () => {
+          let toast = this.toastCtrl.create({
+            message: 'Scanned[' + barcodeData.format + ']: ' + barcodeData.text,
+            showCloseButton: true,
+            dismissOnPageChange: true
+          });
+          toast.present();
+        }
+      );
+    }).catch(err => {
+      let toast = this.toastCtrl.create({
+        message: 'Error: ' + err,
+        showCloseButton: true,
+        dismissOnPageChange: true
+      });
+    
+      toast.present();
+    });
+  }
+
 }
