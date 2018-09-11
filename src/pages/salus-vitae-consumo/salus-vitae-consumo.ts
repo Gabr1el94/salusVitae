@@ -21,5 +21,33 @@ export class SalusVitaeConsumoPage {
 
   buttonClick() {
       this.isOwner = !this.isOwner;
+      
+  }
+
+  confirm(){
+    this.showConfirm()
+  }
+
+  showConfirm() {
+    const confirm = this.actionCtrl.create({
+      title: 'Deseja Ministrar este medicamento?',
+      message: 'Após ministrado a ação não poderar ser desfeita',
+      buttons: [
+        {
+          text: 'Não ministrar',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Ministrar',
+          handler: () => {
+            console.log('Agree clicked');
+            this.navCtrl.pop()
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }
