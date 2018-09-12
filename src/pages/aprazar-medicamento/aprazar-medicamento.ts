@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medicamento';
 
 @Component({
@@ -8,13 +8,28 @@ import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medica
 })
 export class AprazarMedicamentoPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  }
+
+  cancelarMedicamento(params){
+    if (!params) params = {};
+    this.navCtrl.push(PrepararMedicamentoPage);
   }
   
   goToSalusVitaePreparaO(params){
     if (!params) params = {};
     this.navCtrl.push(PrepararMedicamentoPage);
+    let toast = this.toastCtrl.create({
+      message: 'Medicamento salvo com sucesso',
+      duration: 3000,
+      position: 'center',
+      cssClass: 'btn-check'
+    });
+     toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }
-
   
 }

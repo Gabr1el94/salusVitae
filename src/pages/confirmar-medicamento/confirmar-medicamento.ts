@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medicamento';
 
@@ -9,11 +9,21 @@ import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medica
 })
 export class CorfirmarMedicamentoPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
   }
+
   goToSalusVitaeHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);
+
+    let toast = this.toastCtrl.create({
+      message: 'Paciente adicionado com sucesso',
+      duration: 3000,
+      position: 'center',
+      cssClass: 'btn-check'
+    });
+  
+    toast.present();
   }
   
   goToSalusVitaePreparaO(params){
