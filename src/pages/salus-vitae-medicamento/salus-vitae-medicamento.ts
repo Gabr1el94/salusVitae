@@ -8,6 +8,7 @@ import { SalusVitaeHomePage } from '../salus-vitae-home/salus-vitae-home';
 import { SalusVitaeConsumoPage } from '../salus-vitae-consumo/salus-vitae-consumo';
 import { PacientePage } from '../paciente/paciente';
 import { SalusVitaePacientePage } from '../salus-vitae-paciente/salus-vitae-paciente';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-salus-vitae-medicamento',
@@ -15,11 +16,28 @@ import { SalusVitaePacientePage } from '../salus-vitae-paciente/salus-vitae-paci
 })
 export class SalusVitaeMedicamentoPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  }
+
+  cancelarMedicamento(params){
+    if (!params) params = {};
+    this.navCtrl.push(SalusVitaePreparaOPage);
   }
   goToSalusVitaePreparaO(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaePreparaOPage);
+    let toast = this.toastCtrl.create({
+      message: 'Medicamento salvo com sucesso',
+      duration: 3000,
+      position: 'center',
+      cssClass: 'btn-check'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }goToSalusVitaeDetalhes(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeDetalhesPage);

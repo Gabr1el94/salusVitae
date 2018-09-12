@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SalusVitaeHomePage } from '../salus-vitae-home/salus-vitae-home';
+import { ToastController } from 'ionic-angular';
 /*
 import { SalusVitaeConsumoPage } from '../salus-vitae-consumo/salus-vitae-consumo';
 import { PacientePage } from '../paciente/paciente';
@@ -17,11 +18,22 @@ import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-c
 })
 export class SalusVitaeLoginPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private toastCtrl: ToastController) {
   }
   goToSalusVitaeHome(params){
     if (!params) params = {};
     this.navCtrl.push(SalusVitaeHomePage);
+    let toast = this.toastCtrl.create({
+      message: 'Bem vindo ao Salus Vitae',
+      duration: 3000,
+      position: 'center'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }
   /*
   goToSalusVitaeConsumo(params){
