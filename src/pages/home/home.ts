@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { SalusVitaeLoginPage } from '../salus-vitae-login/salus-vitae-login';
-import { SalusVitaeHomePage } from '../salus-vitae-home/salus-vitae-home';
-import { SalusVitaeConsumoPage } from '../salus-vitae-consumo/salus-vitae-consumo';
+import { NavController, ToastController } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ConsumoPage } from '../consumo/consumo';
 import { PacientePage } from '../paciente/paciente';
-import { SalusVitaePacientePage } from '../salus-vitae-paciente/salus-vitae-paciente';
-import { SalusVitaePreparaOPage } from '../salus-vitae-prepara-o/salus-vitae-prepara-o';
-import { SalusVitaeDetalhesPage } from '../salus-vitae-detalhes/salus-vitae-detalhes';
-import { SalusVitaeMedicamentoPage } from '../salus-vitae-medicamento/salus-vitae-medicamento';
-import { MedicamentoPage } from '../medicamento/medicamento';
-import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-confirma-o';
 
 @Component({
   selector: 'page-home',
@@ -17,38 +10,52 @@ import { SalusVitaeConfirmaOPage } from '../salus-vitae-confirma-o/salus-vitae-c
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private toastCtrl: ToastController) {
   }
-  goToSalusVitaeLogin(params){
+
+  goToSalusVitaeConsumo(params){
     if (!params) params = {};
-    this.navCtrl.push(SalusVitaeLoginPage);
-  }goToSalusVitaeHome(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaeHomePage);
-  }goToSalusVitaeConsumo(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaeConsumoPage);
-  }goToPaciente(params){
-    if (!params) params = {};
-    this.navCtrl.push(PacientePage);
-  }goToSalusVitaePaciente(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaePacientePage);
-  }goToSalusVitaePreparaO(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaePreparaOPage);
-  }goToSalusVitaeDetalhes(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaeDetalhesPage);
-  }goToSalusVitaeMedicamento(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaeMedicamentoPage);
-  }goToMedicamento(params){
-    if (!params) params = {};
-    this.navCtrl.push(MedicamentoPage);
-  }goToSalusVitaeConfirmaO(params){
-    if (!params) params = {};
-    this.navCtrl.push(SalusVitaeConfirmaOPage);
+    this.navCtrl.push(ConsumoPage);
+  }
+
+  startScan() {
+    let options = {
+      showTorchButton: true,
+      prompt: 'Realize o scan da pulseira do paciente',
+      resultDisplayDuration: 0
+    }
+
+    this.barcodeScanner.scan(options).then(barcodeData => {
+      if (!barcodeData.cancelled) {
+        this.navCtrl.push(PacientePage).then(() => {
+            let toast = this.toastCtrl.create({
+              message: 'Scanned[' + barcodeData.format + ']: ' + barcodeData.text + ', ' + barcodeData.cancelled,
+              showCloseButton: true,
+              dismissOnPageChange: true
+            });
+
+            toast.present();
+          });
+      } else {
+        this.navCtrl.setRoot(HomePage).then(() => {
+          let toast = this.toastCtrl.create({
+            message: 'Error: Scanner cancelled',
+            showCloseButton: true,
+            dismissOnPageChange: true
+          });
+          
+          toast.present();
+        });
+      }
+    }).catch(err => {
+      let toast = this.toastCtrl.create({
+        message: 'Error: ' + err,
+        showCloseButton: true,
+        dismissOnPageChange: true
+      });
+    
+      toast.present();
+    });
   }
 
 }

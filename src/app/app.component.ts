@@ -2,8 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
-import { SalusVitaeLoginPage } from '../pages/salus-vitae-login/salus-vitae-login';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +10,7 @@ import { SalusVitaeLoginPage } from '../pages/salus-vitae-login/salus-vitae-logi
 export class MyApp {
   
   @ViewChild('content') nav: NavController;
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -19,13 +18,20 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      
+      if (platform.is('android')) {
+        statusBar.styleBlackOpaque();
+      }
     });
   }
 
   isLogged() {
     return this.nav.getActive() != null &&
-     !(this.nav.getActive().instance instanceof HomePage ||
-     this.nav.getActive().instance instanceof SalusVitaeLoginPage);
+     !(this.nav.getActive().instance instanceof LoginPage);
+  }
+
+  logout() {
+    this.nav.setRoot(LoginPage);
   }
   
 }

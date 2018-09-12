@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="navCtrl.pop()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Salus Vitae - Consumo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding id="page6">
+  <div class="spacer" style="width:283px;height:17px;" id="consumo-spacer5"></div>
+  <div id="consumo-container4" class="title">
+    <h2 id="consumo-heading4" style="color:#000000;font-weight:600;text-align:center;">
+      Nome Completo
+    </h2>
+    <h4 id="consumo-heading5" style="color:#000000;text-align:center;">
+      Prontuário
+    </h4>
+  </div>
+  <div class="spacer" style="width:283px;height:21px;" id="consumo-spacer7"></div>
+  <form id="consumo-form4">
+    <ion-list id="consumo-list6" class="listConsumer">
+      <ion-item color="none" id="consumo-list-item23" ion-item (click)="buttonClick()">
+        <ion-label>
+          Medicação 1
+        </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item color="none" id="consumo-list-item24" ion-item (click)="buttonClick()">
+        <ion-label>
+          Medicação 2
+        </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item color="none" id="consumo-list-item25" ion-item (click)="buttonClick()">
+        <ion-label>
+          Medicação 3
+        </ion-label>
+        <ion-checkbox item-right secondary checked="false"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-card *ngIf="isOwner">
+      <ion-item>
+        <h2>Intervalo</h2>
+        <p>00:02:00</p>
+      </ion-item>
+      <div class="spacer" style="width:283px;height:17px;" id="salusVitaeMedicamento-spacer22"></div>
+    </ion-card>
+
+    <ion-fab bottom right>
+      <button ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
+    <!--  
+      <h4 id="consumo-heading7" style="color:#000000;">
+        Motivo:
+      </h4>
+      
+      <ion-item id="consumo-input6">
+        <ion-label></ion-label>
+        <ion-input type="text" placeholder="Justifique..." name="motivo"></ion-input>
+      </ion-item>
+      
+      <div class="spacer" style="width:283px;height:17px;" id="salusVitaeMedicamento-spacer22"></div>
+      
+      <button id="consumo-button5" ion-button color="positive" large style="font-weight:600;border-radius:30px 30px 30px 30px;" class="addRead">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+   -->
+  </form>
+</ion-content>

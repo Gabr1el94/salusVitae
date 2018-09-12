@@ -4,14 +4,13 @@ import { HomePage } from '../home/home';
 import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medicamento';
 
 @Component({
-  selector: 'page-paciente',
-  templateUrl: 'paciente.html'
+  selector: 'page-confirmar-medicamento',
+  templateUrl: 'confirmar-medicamento.html'
 })
-export class PacientePage {
+export class CorfirmarMedicamentoPage {
 
   constructor(public navCtrl: NavController) {
   }
-
   goToSalusVitaeHome(params){
     if (!params) params = {};
     this.navCtrl.push(HomePage);

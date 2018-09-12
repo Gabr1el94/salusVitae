@@ -1,17 +1,72 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)=" goToSalusVitaeHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
-      Paciente
+      Salus Vitae - Paciente
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
-<ion-content id="page9">
-  <div id="paciente-container9">
-    <div class="spacer" style="width:320px;height:81px;" id="paciente-spacer15"></div>
-    <div>
-      <a style="display:block;" on-click="goToSalusVitaePaciente()">
-        <img src="assets/img/tbKZNQiTm2WnKY05JoJI_img_411833.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-      </a>
+<ion-content padding id="page10">
+  <div id="paciente-container8" class="title">
+    <div class="spacer" style="width:283px;height:16px;" id="paciente-spacer8"></div>
+    <h2 id="paciente-heading8" style="color:#000000;font-weight:600;text-align:center;">
+      Nome Completo
+    </h2>
+    <h4 id="paciente-heading9" style="color:#000000;text-align:center;">
+      Prescrição
+    </h4>
+  </div>
+  <div id="paciente-container10" class="infor">
+    <div class="spacer" style="width:283px;height:20px;" id="paciente-spacer11"></div>
+    <div id="paciente-container11" class="btn-group">
+        <div class="button-bar custom-width-bar">
+            <button ion-button color="secondary" large class="button-btn">Geral</button>
+            <button ion-button color="secondary" large class="button-btn">Prescrição</button>
+          </div>
+    </div>
+    <div class="spacer" style="height:20px;" id="paciente-spacer23"></div>
+    <div id="paciente-markdown2" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>
+          Status:
+        </strong>
+        Some friendly
+      </p>
+      <p style="color:#000000;">
+        <strong>
+          Medicação:
+        </strong>
+        Descrição
+      </p>
+      <p style="color:#000000;">
+        <strong>
+          Clínica:
+        </strong>
+        Andar e Lugar
+      </p>
+      <p style="color:#000000;">
+        <strong>
+          Leito:
+        </strong>
+        Leito
+      </p>
+      <p style="color:#000000;">
+        <strong>
+          Medico Responsável:
+        </strong>
+        Nome Médico
+      </p>
     </div>
   </div>
+  <div class="spacer" style="height:20px;" id="paciente-spacer10"></div>
+  <button id="paciente-button8" ion-button color="stable" large on-click="goToSalusVitaeHome()">
+    Cancelar
+  </button>
+  <button id="paciente-button9" ion-button color="positive" large on-click="goToSalusVitaePreparaO()">
+    Avançar
+  </button>
 </ion-content>

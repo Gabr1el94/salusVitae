@@ -1,13 +1,36 @@
 <ion-header>
-  <!--<ion-navbar>
-    <ion-title></ion-title>
-  </ion-navbar>-->
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Salus Vitae - Home
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
-<ion-content padding id="page3">
-  <div class="spacer" style="width:300px;height:92px;" id="page3-spacer24"></div>
-  <div class="logo" style="margin-left:-10px;width:calc(100% + 20px);">
-    <a style="display:block;" on-click="goToSalusVitaeLogin()">
-      <img src="assets/img/H7v4iFkYQFCL2KILD8G7_4.png" style="display:block;width:100%;height:AUTO;margin-left:auto;margin-right:auto;" />
-    </a>
+<ion-content padding id="page5">
+  <div id="home-container3">
+    <div class="spacer" style="width:283px;height:10px;" id="home-spacer2"></div>
+    <img src="assets/img/NrZX6TEYRqSkXRWpygg0_img_320438.png" style="display:block;width:53%;height:auto;margin-left:auto;margin-right:auto;" />
   </div>
+  <div class="spacer" style="width:283px;height:17px;" id="home-spacer1"></div>
+  <ion-list id="home-list3">
+    <ion-item color="none" on-click="goToSalusVitaeConsumo()" id="home-list-item4">
+      Paciente 1
+      <ion-icon name="eye" item-right></ion-icon>
+    </ion-item>
+    <ion-item color="none" on-click="goToSalusVitaeConsumo()" id="home-list-item5">
+      Paciente 2
+      <ion-icon name="eye" item-right></ion-icon>
+    </ion-item>
+    <ion-item color="none" on-click="goToSalusVitaeConsumo()" id="home-list-item6">
+      Paciente 3
+      <ion-icon name="eye" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div class="spacer" style="width:283px;height:62px;" id="home-spacer3"></div>
+  <ion-fab bottom right>
+    <button id="home-button2" ion-fab (click)="startScan()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>
+

@@ -1,25 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { PrepararMedicamentoPage } from '../preparar-medicamento/preparar-medicamento';
 
 @Component({
-  selector: 'page-paciente',
-  templateUrl: 'paciente.html'
+  selector: 'page-aprazar-medicamento',
+  templateUrl: 'aprazar-medicamento.html'
 })
-export class PacientePage {
+export class AprazarMedicamentoPage {
 
   constructor(public navCtrl: NavController) {
-  }
-
-  goToSalusVitaeHome(params){
-    if (!params) params = {};
-    this.navCtrl.push(HomePage);
   }
   
   goToSalusVitaePreparaO(params){
     if (!params) params = {};
     this.navCtrl.push(PrepararMedicamentoPage);
   }
+
   
 }

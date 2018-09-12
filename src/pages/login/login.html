@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>Salus Vitae - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding id="page1">
+  <div id="login-container1" class="container">
+    <img src="assets/img/IiVfOgZGTx6p5FPSRVzu_Salus1.png" style="display:block;width:89%;height:auto;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:283px;height:25px;" id="login-spacer4"></div>
+  </div>
+  <form id="login-form3" (ngSubmit)="login()" #loginForm="ngForm">
+    <ion-item id="login-input4">
+      <ion-label></ion-label>
+      <ion-input type="text" placeholder="User" name="username" [(ngModel)]="credentials.name"></ion-input>
+    </ion-item>
+    <ion-item id="login-input5">
+      <ion-label></ion-label>
+      <ion-input type="password" placeholder="*****" name="pass" [(ngModel)]="credentials.password"></ion-input>
+    </ion-item>
+    <br>
+    <button id="login-button1" type="submit" ion-button color="positive" block large icon-right style="font-weight:600;font-size:25px;" [disabled]="!loginForm.form.valid">
+      Entrar
+      <ion-icon name="log-in"></ion-icon>
+    </button>
+  </form>
+  
+</ion-content>
