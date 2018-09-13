@@ -14,7 +14,7 @@ export class CorfirmarMedicamentoPage {
 
   goToSalusVitaeHome(params){
     if (!params) params = {};
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
 
     let toast = this.toastCtrl.create({
       message: 'Paciente adicionado com sucesso',

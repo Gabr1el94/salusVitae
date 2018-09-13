@@ -31,7 +31,7 @@ export class HomePage {
       if (!barcodeData.cancelled) {
         this.navCtrl.push(PacientePage).then(() => {
             let toast = this.toastCtrl.create({
-              message: 'Scanned[' + barcodeData.format + ']: ' + barcodeData.text + ', ' + barcodeData.cancelled,
+              message: 'Scanned[' + barcodeData.format + ']: ' + barcodeData.text,
               showCloseButton: true,
               dismissOnPageChange: true
             });

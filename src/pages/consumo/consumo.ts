@@ -16,12 +16,11 @@ export class ConsumoPage {
 
   goToSalusVitaeHome(params) {
     if (!params) params = {};
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   buttonClick() {
       this.isOwner = !this.isOwner;
-      
   }
 
   confirm(){

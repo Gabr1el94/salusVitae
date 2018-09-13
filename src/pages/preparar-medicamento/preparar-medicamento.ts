@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { DetalhesMedicamentoPage } from '../detalhes-medicamento/detalhes-medicamento';
-import { ScannerMedicamentoPage } from '../scanner-medicamento/scanner-medicamento';
 import { CorfirmarMedicamentoPage } from '../confirmar-medicamento/confirmar-medicamento';
 import { PacientePage } from '../paciente/paciente';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { AprazarMedicamentoPage } from '../aprazar-medicamento/aprazar-medicamento';
 
 @Component({
   selector: 'page-preparar-medicamento',
@@ -11,7 +12,7 @@ import { PacientePage } from '../paciente/paciente';
 })
 export class PrepararMedicamentoPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private toastCtrl: ToastController) {
   }
 
   goToSalusVitaeDetalhes(params){
@@ -19,9 +20,44 @@ export class PrepararMedicamentoPage {
     this.navCtrl.push(DetalhesMedicamentoPage);
   }
 
-  goToMedicamento(params){
-    if (!params) params = {};
-    this.navCtrl.push(ScannerMedicamentoPage);
+  scanMedication(){
+    let options = {
+      showTorchButton: true,
+      prompt: 'Realize o scan do medicamento',
+      resultDisplayDuration: 0
+    }
+
+    this.barcodeScanner.scan(options).then(barcodeData => {
+      if (!barcodeData.cancelled) {
+        this.navCtrl.push(AprazarMedicamentoPage).then(() => {
+            let toast = this.toastCtrl.create({
+              message: 'Scanned[' + barcodeData.format + ']: ' + barcodeData.text,
+              showCloseButton: true,
+              dismissOnPageChange: true
+            });
+
+            toast.present();
+          });
+      } else {
+        this.navCtrl.push(PrepararMedicamentoPage).then(() => {
+          let toast = this.toastCtrl.create({
+            message: 'Error: Scanner cancelled',
+            showCloseButton: true,
+            dismissOnPageChange: true
+          });
+          
+          toast.present();
+        });
+      }
+    }).catch(err => {
+      let toast = this.toastCtrl.create({
+        message: 'Error: ' + err,
+        showCloseButton: true,
+        dismissOnPageChange: true
+      });
+    
+      toast.present();
+    });
   }
 
   goToSalusVitaeConfirmaO(params){

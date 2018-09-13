@@ -14,7 +14,7 @@ export class PacientePage {
 
   goToSalusVitaeHome(params){
     if (!params) params = {};
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
   
   goToSalusVitaePreparaO(params){

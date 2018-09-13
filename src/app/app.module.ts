@@ -7,7 +7,6 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { ConsumoPage } from '../pages/consumo/consumo';
 import { PacientePage } from '../pages/paciente/paciente';
-import { ScannerMedicamentoPage } from '../pages/scanner-medicamento/scanner-medicamento';
 import { PrepararMedicamentoPage } from '../pages/preparar-medicamento/preparar-medicamento';
 import { DetalhesMedicamentoPage } from '../pages/detalhes-medicamento/detalhes-medicamento';
 import { AprazarMedicamentoPage } from '../pages/aprazar-medicamento/aprazar-medicamento';
@@ -22,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ConsumoPage,
     PacientePage,
-    ScannerMedicamentoPage,
     PrepararMedicamentoPage,
     DetalhesMedicamentoPage,
     AprazarMedicamentoPage,
@@ -39,7 +37,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ConsumoPage,
     PacientePage,
-    ScannerMedicamentoPage,
     PrepararMedicamentoPage,
     DetalhesMedicamentoPage,
     AprazarMedicamentoPage,
