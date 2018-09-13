@@ -10,6 +10,8 @@ import { PacientePage } from '../paciente/paciente';
 })
 export class HomePage {
 
+  segment: string = "aprazamentos";
+
   constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private toastCtrl: ToastController) {
   }
 
