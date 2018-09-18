@@ -1,0 +1,14 @@
+{
+    "idPaciente": 1232148,
+    "idMedico" : 53253252,
+    "idsPrescricoes": [
+    {
+       "idPrescricao": 93859384
+    },
+    {
+       "idPrescricao": 54875449
+    },
+    {
+       "idPrescricao": 34958349
+    }]
+}

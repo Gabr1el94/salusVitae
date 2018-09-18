@@ -1,0 +1,37 @@
+{
+    "idPrescrica" : "1",
+    "nomePaciente" : "Rodolfo Doente",
+    "dataNascimento" : "17/08/2018",
+    "dataAdminissao" : "01/08/2018",
+    "tipoPerfil" : "Conservador",
+    "numeroRg": "18282323",
+    "nomeMae" : "Maria da Silva",
+    "pesoAdmissao" : "80kg",
+    "alergia": "Dipirona",
+    "leito" : "505-A",
+    "pesoSeco" : "75kg",
+    "dataAtual" : "17/09/2018",
+    "nomeMedico" : "José da Silva",
+    "alergias": [{
+        "descricao": "Ácido Aceticílico"
+    }],
+    "medicamentos": [
+    {
+        "idMedicamento" : 23928392,
+        "nomeMedicamento" : "Micofenolato de mofetila",
+        "quantidade": "500mg",
+        "isSupenso" : false,
+        "dataSuspensao": null,
+        "observacao": "02 COMP, V.O",
+        "intervalo": "12h"
+    },
+    {
+        "idMedicamento" : 9128328,
+        "nomeMedicamento" : "Ciclofosfamida",
+        "quantidade": "1000mg",
+        "isSupenso" : true,
+        "dataSuspensao": "15/08/2018",
+        "observacao": "01 amp + 500mg SF 0,9%, I.V - Infudir em 1h (BIC)",
+        "intervalo": "14h"
+    }]
+}
